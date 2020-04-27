@@ -9,34 +9,42 @@ namespace MyRecipe.Data.Entities
 {
     public class Recipe
     {
-     
-
-        public Recipe(string title, string description, Uri imageUrl, DateTime createdAt, DateTime publicshedAt, ApplicationUser createdBy)
+        public Recipe(string title, string description, Uri imageUrl, string instructions, DateTime createdAt, DateTime? publishedAt, ApplicationUser createdBy)
         {
             Title = title;
             Description = description;
             ImageUrl = imageUrl;
+            Instructions = instructions;
             CreatedAt = createdAt;
-            PublicshedAt = publicshedAt;
-           
+            PublishedAt = publishedAt;
+            CreatedBy = createdBy;
         }
 
-        public Recipe(string title, string description, Uri imageUrl, DateTime createdAt, DateTime publicshedAt)
+        public Recipe(string title, string description, Uri imageUrl,string instructions, DateTime createdAt, DateTime? publishedAt)
         {            
             Title = title;
             Description = description;
             ImageUrl = imageUrl;
+            Instructions = instructions;
             CreatedAt = createdAt;
-            PublicshedAt = publicshedAt;
+            PublishedAt = publishedAt;
         }
+        //TODO: Handle this property at some point in time ...
+        public Recipe()
+        {
 
-        public int Id { get; protected set; }
-        public string Title { get; protected set; }
-        public string Description { get; protected set; }
-        public Uri ImageUrl { get; protected set; }
-        public DateTime CreatedAt { get; protected set; }
-        public DateTime PublicshedAt { get; protected set; }
-        public ApplicationUser CreatedBy { get; protected set; }       
-        public RecipeState State { get; protected set; } = RecipeState.Draft;
+        }
+       
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public Uri ImageUrl { get; set; }
+        public string Instructions { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime? PublishedAt { get; set; }
+
+        // ApplicationUser is a Navigation property
+        public ApplicationUser CreatedBy { get; set; }       
+        public RecipeState State { get; set; } = RecipeState.Draft;
     }
 }
