@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 
 namespace MyRecipe.Models.Domain
 {
-    public class RecipeState
+    public enum RecipeState
     {
-        
-
+        Draft,
+        PendingApproval,
+        Approved,
+        Rejected
     }
 }
