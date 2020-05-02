@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyRecipe.Data.Entities
 {
-    public class Recipe
+    public class Recipe 
     {
         public Recipe(string title, string description, Uri imageUrl, string instructions, DateTime createdAt, DateTime? publishedAt, ApplicationUser createdBy)
         {
