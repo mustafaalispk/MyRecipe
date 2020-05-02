@@ -2,6 +2,7 @@
 using MyRecipe.Models.Domain;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -36,9 +37,15 @@ namespace MyRecipe.Data.Entities
         }
        
         public int Id { get; set; }
+        //[Required]
+        //[MaxLength(50)]
         public string Title { get; set; }
+        //[Required]
+        //[MaxLength(1000)]
         public string Description { get; set; }
         public Uri ImageUrl { get; set; }
+        //[Required]
+        //[MaxLength(1000)]
         public string Instructions { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? PublishedAt { get; set; }
