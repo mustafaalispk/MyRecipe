@@ -29,7 +29,7 @@ namespace MyRecipe.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,ImageUrl,CreatedAt,PublishedAt,State")] Recipe recipe)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,ImageUrl,Instructions,CreatedAt,PublishedAt,State")] Recipe recipe)
         {
 
             if (ModelState.IsValid)
