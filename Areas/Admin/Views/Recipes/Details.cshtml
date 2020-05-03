@@ -45,6 +45,11 @@
     </dl>
 </div>
 <div>
+    <form method="post" asp-action="Approve">
+        <input type="hidden" name="recipeId" value="@Model.Id" />
+        <button type="submit">Approve</button>
+
+    </form>
     <a asp-action="Approve" asp-route-id="@Model.Id">Approve</a> |
     <a asp-action="Index">Back to List</a>
 </div>
