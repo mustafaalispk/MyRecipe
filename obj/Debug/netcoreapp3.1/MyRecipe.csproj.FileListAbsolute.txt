@@ -175,3 +175,6 @@ C:\Agil SystemUtvecling med SCRUM KODEN\MyRecipe\MyRecipe\obj\Debug\netcoreapp3.
 C:\Agil SystemUtvecling med SCRUM KODEN\MyRecipe\MyRecipe\obj\Debug\netcoreapp3.1\MyRecipe.MvcApplicationPartsAssemblyInfo.cache
 C:\Agil SystemUtvecling med SCRUM KODEN\MyRecipe\MyRecipe\obj\Debug\netcoreapp3.1\Razor\Views\Recipes\Create.cshtml.g.cs
 C:\Agil SystemUtvecling med SCRUM KODEN\MyRecipe\MyRecipe\obj\Debug\netcoreapp3.1\Razor\Views\Recipes\ThankYou.cshtml.g.cs
+C:\Agil SystemUtvecling med SCRUM KODEN\MyRecipe\MyRecipe\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Recipes\Details.cshtml.g.cs
+C:\Agil SystemUtvecling med SCRUM KODEN\MyRecipe\MyRecipe\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Recipes\Index.cshtml.g.cs
+C:\Agil SystemUtvecling med SCRUM KODEN\MyRecipe\MyRecipe\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
