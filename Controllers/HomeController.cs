@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyRecipe.Data;
 using MyRecipe.Models;
 
 namespace MyRecipe.Controllers
@@ -12,15 +13,19 @@ namespace MyRecipe.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext _context)
         {
             _logger = logger;
+            context = _context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string q)
         {
-            return View();
+            var recipes = context.Recipe.Where(x => x.Title.Contains(q) && x.State == Models.Domain.RecipeState.Approved)
+                .ToList();
+            return View(recipes);
         }
 
         public IActionResult Privacy()

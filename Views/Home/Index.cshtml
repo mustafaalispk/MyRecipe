@@ -1,8 +1,17 @@
-﻿@{
+﻿@model IEnumerable<MyRecipe.Data.Entities.Recipe>
+@{
     ViewData["Title"] = "Home Page";
 }
+    <form>
+        <label>Search:
+            <input type="search" name="q" />
+            <button type="submit">Search</button>
+        </label>
+    </form>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@foreach(var recipe in Model)
+{
+    <div>
+        @recipe.Title
+    </div>
+}
