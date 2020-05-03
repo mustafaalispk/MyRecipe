@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyRecipe.Data;
@@ -7,6 +8,7 @@ using MyRecipe.Models.Domain;
 
 namespace MyRecipe.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class RecipesController : Controller
     {
