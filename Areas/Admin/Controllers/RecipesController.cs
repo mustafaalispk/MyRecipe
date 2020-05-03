@@ -44,5 +44,27 @@ namespace MyRecipe.Areas.Admin.Controllers
             return View(recipe);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Approve(int recipeId)
+        {
+            if (recipeId == null)
+            {
+                return NotFound();
+            }
+
+            var recipe = await _context.Recipe
+                .FirstOrDefaultAsync(m => m.Id == recipeId);
+            if (recipe == null)
+            {
+                return NotFound();
+            }
+
+            recipe.Approve();
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

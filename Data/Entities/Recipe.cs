@@ -52,6 +52,16 @@ namespace MyRecipe.Data.Entities
 
         // ApplicationUser is a Navigation property
         public ApplicationUser CreatedBy { get; set; }       
-        public RecipeState State { get; set; } = RecipeState.Draft;
+        public RecipeState State { get; private set; } = RecipeState.Draft;
+
+        public void Approve()
+        {
+            State = RecipeState.Approved;
+        }
+
+        public void SubmitForApproval()
+        {
+            State = RecipeState.PendingApproval;
+        }
     }
 }

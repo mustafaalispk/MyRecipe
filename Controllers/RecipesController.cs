@@ -38,8 +38,9 @@ namespace MyRecipe.Controllers
             
 
             if (ModelState.IsValid)
-            {
-                recipe.State = RecipeState.PendingApproval;
+            {                
+
+                recipe.SubmitForApproval();
 
                 var user = userManager.GetUserAsync(HttpContext.User).Result;
 
